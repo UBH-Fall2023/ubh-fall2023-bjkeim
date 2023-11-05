@@ -1,12 +1,12 @@
-# UB Hacking Fall 2023 Rules 
-- Teams can consist of between 1 and 4 people.
-- To have your submission be considered for judging, you must submit a 2-5 minute video along with your project. Try to keep it as concise as possible!
-- The projects submitted for judging cannot have been started prior to the start of the hackathon. In other words, teams can plan their projects in great detail, but they cannot begin writing code until they arrive at the hackathon.
-- Additionally, we are partnering with MLH this year, which means that our hackers must follow their code of conduct which can be found below.
-- Any and all resources used must be open source and specified in either the project, or the project description.
-- Your project must be publically available and under source control in this repository.
-- Prior to submitting to devpost, your project must be fully committed and pushed to this repository.
-- The link to this repository must be available on your devpost submission.
-- Projects can not have been submitted to another event, including other hackathons this weekend.
-- [Code of Conduct](https://drive.google.com/file/d/1RH_TtRu6EOHSbOoiSj2h1Q4jswtVILzE/view)
-- [MLH Code of Conduct](https://static.mlh.io/docs/mlh-code-of-conduct.pdf)
+Ever heard of the saying "one bad apple spoils the whole barrel"! Well with Bad Apples we will detect the Bad Apples before they spoil the whole barrel. Bad Apples runs on a YoloV8 model that is trained on 1000+ images that are defined as either "Fresh" or "Rotten" apples. Due to our dataset being relatively small compared to others, it only trained in just over an hour. Bad Apples has potential use in supermarkets where we can automatically alert storekeepers as to whether or not their product is safe to sell. We struggled to use react and flutter for the first 6 hours of work, and nearly gave up several times.
+
+Inspired
+We have personal struggles with groceries spoiling and wanted to create something that could reduce food waste
+
+How we built it
+The backend was created in python and used flask to take input from the user. Trained pytorch model in google collab with ultralytics.
+
+Challenges
+Attempting to create a program using a framework(React) that we were unfamiliar with. Our greatest challenge was integrating the model to accept web cam input and display back to user.
+
+one apple was harmed in the making of this program
