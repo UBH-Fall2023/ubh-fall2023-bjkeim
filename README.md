@@ -4,10 +4,11 @@ Ever heard of the saying "one bad apple spoils the whole barrel"! Well with Bad 
 We have personal struggles with groceries spoiling and wanted to create something that could reduce food waste
 
 ## How we built it
-The backend was created in python and used flask to take input from the user. Trained pytorch model in google collab with ultralytics.
+- The backend was created in python and used flask to take input from the user. 
+- Trained pytorch model in google collab with ultralytics.
 
 ## Challenges
-Attempting to create a program using a framework(React) that we were unfamiliar with. Our greatest challenge was integrating the model to accept web cam input and display back to user.
+Attempting to create a program using a framework(React) that we were unfamiliar with. Our greatest challenge was integrating the model to accept web cam input and display back to user. We tried to deploy our app but we had trouble resolving dependencies.
 
 _one apple was harmed in the making of this program_
 
