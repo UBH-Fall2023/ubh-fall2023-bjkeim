@@ -25,7 +25,7 @@ class ObjectDetection:
 
     def load_model(self):
        
-        model = YOLO("yolov8m.pt")  # load a pretrained YOLOv8n model
+        model = YOLO("bad_apple.pt")  # load a pretrained YOLOv8n model
         model.fuse()
     
         return model
@@ -47,17 +47,19 @@ class ObjectDetection:
          # Extract detections for person class
         for result in results:
             boxes = result.boxes.cpu().numpy()
-            class_id = boxes.cls[0]
-            conf = boxes.conf[0]
-            xyxy = boxes.xyxy[0]
-
-            if class_id == 0.0:
-          
-              xyxys.append(result.boxes.xyxy.cpu().numpy())
-              confidences.append(result.boxes.conf.cpu().numpy())
-              class_ids.append(result.boxes.cls.cpu().numpy().astype(int))
+            try:
+                class_id = boxes.cls[0]
+                conf = boxes.conf[0]
+                xyxy = boxes.xyxy[0]
             
-        
+                if class_id == 0.0:
+          
+                    xyxys.append(result.boxes.xyxy.cpu().numpy())
+                    confidences.append(result.boxes.conf.cpu().numpy())
+                    class_ids.append(result.boxes.cls.cpu().numpy().astype(int))
+            
+            except:
+                print("error")
         # Setup detections for visualization
         detections = sv.Detections(
                     xyxy=results[0].boxes.xyxy.cpu().numpy(),
@@ -68,7 +70,7 @@ class ObjectDetection:
     
         # Format custom labels
         self.labels = [f"{self.CLASS_NAMES_DICT[class_id]} {confidence:0.2f}"
-        for _, confidence, class_id, tracker_id
+        for _, _, confidence, class_id, tracker_id
         in detections]
         
         # Annotate and display frame
