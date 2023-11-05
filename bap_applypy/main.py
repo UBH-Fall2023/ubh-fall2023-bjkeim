@@ -1,6 +1,6 @@
 from flask import Flask,render_template,Response
 import cv2
-
+from YOLOv8InferenceClass import ObjectDetection 
 app=Flask(__name__)
 camera=cv2.VideoCapture(0)
 
@@ -25,7 +25,8 @@ def index():
 
 @app.route('/video')
 def video():
-    return Response(generate_frames(),mimetype='multipart/x-mixed-replace; boundary=frame')
+    detector = ObjectDetection(capture_index=0)
+    return Response( detector(),mimetype='multipart/x-mixed-replace; boundary=frame')
 
 if __name__=="__main__":
     app.run(debug=True)

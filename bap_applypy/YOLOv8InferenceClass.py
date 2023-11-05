@@ -84,8 +84,8 @@ class ObjectDetection:
 
         cap = cv2.VideoCapture(self.capture_index)
         assert cap.isOpened()
-        cap.set(cv2.CAP_PROP_FRAME_WIDTH, 1280)
-        cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 720)
+        cap.set(cv2.CAP_PROP_FRAME_WIDTH, 1920)
+        cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 1080)
       
         while True:
           
@@ -100,18 +100,24 @@ class ObjectDetection:
             end_time = time()
             fps = 1/np.round(end_time - start_time, 2)
              
-            cv2.putText(frame, f'FPS: {int(fps)}', (20,70), cv2.FONT_HERSHEY_SIMPLEX, 1.5, (0,255,0), 2)
+            #cv2.putText(frame, f'FPS: {int(fps)}', (20,70), cv2.FONT_HERSHEY_SIMPLEX, 1.5, (0,255,0), 2)
             
-            cv2.imshow('YOLOv8 Detection', frame)
+            # cv2.imshow('YOLOv8 Detection', frame)
  
-            if cv2.waitKey(5) & 0xFF == 27:
+            #if cv2.waitKey(5) & 0xFF == 27:
                 
-                break
+                # break
         
-        cap.release()
-        cv2.destroyAllWindows()
+        #cap.release()
+        #cv2.destroyAllWindows()
+            ret,buffer=cv2.imencode('.jpg',frame)
+            frame=buffer.tobytes()
+
+            yield(b'--frame\r\n'
+                   b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n')
+
         
         
     
-detector = ObjectDetection(capture_index=0)
-detector()
+#detector = ObjectDetection(capture_index=0)
+#detector()
