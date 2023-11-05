@@ -9,4 +9,10 @@ The backend was created in python and used flask to take input from the user. Tr
 ## Challenges
 Attempting to create a program using a framework(React) that we were unfamiliar with. Our greatest challenge was integrating the model to accept web cam input and display back to user.
 
-one apple was harmed in the making of this program
+_one apple was harmed in the making of this program_
+
+[working with model results](https://github.com/niconielsen32/YOLOv8-Class/blob/main/YOLOv8InferenceClass.py)
+[webcam input](https://towardsdatascience.com/how-to-display-video-streaming-from-a-webcam-using-flask-7a15e26fbab8)
+[webcam input 2](https://stackoverflow.com/questions/54786145/web-cam-in-a-webpage-using-flask-and-python)
+
+
