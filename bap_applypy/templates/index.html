@@ -1,10 +1,68 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Camera Stream</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../normalize.css" />
+    <link rel="stylesheet" href="styles.css">
+    <style>
+      :root {
+        --clr-dark: #070a12;
+        --clr-light: #f9f9fb;
+        --clr-accent: #f43f70;
+        --clr-rgba: rgba(244, 63, 112, 0.2);
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+
+      * {
+        font-family: 'Roboto', sans-serif;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        line-height: 1.5;
+        word-spacing: 1.4px;
+        color: var(--clr-dark);
+        background-color: var(#c8e1cc);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      .btn {
+        font-size: 5rem;
+        font-weight: 700;
+        padding: .5em 1em;
+        color: var(#f43f70);
+        background-color: var(#c8e1cc);
+        border: 10px solid var(#f43f70);
+        border-radius: 5px;
+
+        transition-property: transform;
+        transition-duration: 0.3s;
+        transition-timing-function: ease;
+        transition-delay: 0s;
+      }
+
+      .btn:hover {
+        transform: translateY(-10px);
+      }
+    </style>
   </head>
-  <body>
-    <h1>Camera Stream</h1>
-    <img src="{{ url_for('video') }}" width="1280" height="720">
+  <body style="background-color:rgb(49, 235, 58);">
+
+    <a href="{{ url_for('video') }}" target="_blank"><button class="btn">Bad Apple</button></a>
   </body>
 </html>

@@ -3,6 +3,9 @@ import cv2
 from YOLOv8InferenceClass import ObjectDetection 
 app=Flask(__name__)
 camera=cv2.VideoCapture(0)
+#frame_width, frame_height = camera.get(3), camera.get(4)  # Get the frame width and height
+#frame_aspect_ratio = frame_width / frame_height
+
 
 def generate_frames():
     while True:
